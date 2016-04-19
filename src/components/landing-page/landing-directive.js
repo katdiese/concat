@@ -11,7 +11,10 @@
       templateUrl: 'components/landing-page/landing.html',
       controller:
         function($scope) {
-          $scope.message = "Welcome to the landing page of Concat!!"
+          $scope.showLogin = true;
+          $scope.toggleForm = function() {
+            $scope.showLogin = !$scope.showLogin;
+          }
         }
       }
     }
