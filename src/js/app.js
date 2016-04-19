@@ -2,6 +2,10 @@
 
 angular.module('concatApp', ['ngRoute']);
 
-app.controller('myController', ['$scope', function($scope) {
-  $scope.greeting = "Hello World!";
-}]);
+angular.module('concatApp')
+  .config(function($routeProvider) {
+    $routeProvider
+      .when('/', {
+        template: '<landing-page></landing-page>'
+      })
+  })
