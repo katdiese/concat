@@ -8,7 +8,7 @@
     function landingPage() {
       return {
       restrict: 'E',
-      templateUrl: 'components/landing-page/landing.html',
+      templateUrl: 'components/landing-page/landing.html.html',
       controller:
         function($scope) {
           $scope.showLogin = true;
