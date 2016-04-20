@@ -2,8 +2,13 @@
 <div class="single-user" ng-repeat="user in users">
   <h2>{{user.names.firstName}} {{user.names.lastName}}</h2>
   <img ng-src="{{user.avatar}}">
+  <ul>
+    <li ng-repeat="interest in user.interestedIn">
+      {{interest | lookingFor}}
+    </li>
+  </ul>
 
 </div>
-<button ng-click="paginate('forward')">Next 10</button>
 <button ng-show="currentOffset" ng-click="paginate('backward')">Previous 10</button>
+<button ng-click="paginate('forward')">Next 10</button>
 </div class="container">

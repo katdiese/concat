@@ -23,7 +23,7 @@
             }
             $scope.paginate = function(direction) {
               if(direction === 'forward') {
-              $scope.currentOffset += 11;
+                $scope.currentOffset += 11;
               } else if (direction === 'backward') {
                 $scope.currentOffset -= 11;
               }
