@@ -1,0 +1,32 @@
+$light-grey: #bdbdbd;
+
+.all-users {
+  height: 80vh;
+  overflow: scroll;
+
+  img {
+    float: left;
+    margin-left: 10px;
+  }
+  h2 {
+    margin-left: 10px;
+  }
+  .single-user-info {
+    margin-left: 20px;
+    float: left;
+  }
+  .user-repeat {
+    width: 50%;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 2px solid $light-grey;
+  }
+}
+
+.chosenUser {
+  width: 40%;
+  position: fixed;
+  margin-top: 30px;
+  right: 0;
+  top: 0;
+}

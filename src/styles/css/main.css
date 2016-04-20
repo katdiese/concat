@@ -31,6 +31,30 @@
     .landing-page .home-nav a:first-child {
       margin-left: 10%; }
 
+.all-users {
+  height: 80vh;
+  overflow: scroll; }
+  .all-users img {
+    float: left;
+    margin-left: 10px; }
+  .all-users h2 {
+    margin-left: 10px; }
+  .all-users .single-user-info {
+    margin-left: 20px;
+    float: left; }
+  .all-users .user-repeat {
+    width: 50%;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 2px solid #bdbdbd; }
+
+.chosenUser {
+  width: 40%;
+  position: fixed;
+  margin-top: 30px;
+  right: 0;
+  top: 0; }
+
 html {
   position: relative;
   min-height: 100%; }
