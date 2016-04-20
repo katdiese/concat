@@ -1,4 +1,51 @@
+$dark: #595358;
+$light: #FBFBF2;
+$blue: #348AA7;
+
 .landing-page {
   background-image: url('../../images/asanoha-400px.png');
   min-height: 100vh;
+
+  p {
+    font-size: 2rem;
+  }
+
+  button:hover {
+    background-color: $blue;
+    color: $light;
+    border: none;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  .title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 10rem;
+    color: $dark;
+    text-align: center;
+    padding-top: 25vh;
+  }
+
+  .home-nav {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    background-color: $blue;
+    height: 60px;
+
+    a {
+      color: $dark;
+      margin: auto;
+      text-decoration: none;
+      font-size: 2.5rem;
+      padding: 0 20px;
+    }
+    a:first-child {
+      margin-left: 10%;
+      // border-right: 2px solid $dark;
+    }
+  }
 }
