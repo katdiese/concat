@@ -1,13 +1,31 @@
 <div class="container all-users">
 <div class="single-user" ng-repeat="user in users">
-  <h2>{{user.names.firstName}} {{user.names.lastName}}</h2>
-  <img ng-src="{{user.avatar}}">
-  <ul>
-    <li ng-repeat="interest in user.interestedIn">
-      {{interest | lookingFor}}
-    </li>
-  </ul>
-
+  <div class="row user-repeat">
+    <h2>{{user.username}}</h2>
+    <img ng-src="{{user.avatar}}">
+    <div class="single-user-info">
+      <p>{{user.names.firstName}} is a <strong>{{ user.gender | youAre }}</strong></p>
+      <p>Who is interested in: </p>
+      <ul>
+        <li ng-repeat="interest in user.interestedIn">
+          {{interest | interests}}
+        </li>
+      </ul>
+      <button ng-click="getOneUser(user._id)">More Info</button>
+    </div>
+</div>
+</div>
+<div ng-show="oneUser" class="chosenUser">
+  <h1>{{oneUser.username}}</h1>
+  <img ng-src="{{oneUser.avatar}}">
+  <p>{{oneUser.names.firstName}} is a <strong>{{ oneUser.gender | youAre }}</strong></p>
+      <p>Who is interested in: </p>
+      <ul>
+        <li ng-repeat="interest in oneUser.interestedIn">
+          {{interest | interests}}
+        </li>
+      </ul>
+  <p>Company: {{ oneUser.company.name }}</p>
 </div>
 <button ng-show="currentOffset" ng-click="paginate('backward')">Previous 10</button>
 <button ng-click="paginate('forward')">Next 10</button>
