@@ -10,14 +10,20 @@ $blue: #348AA7;
     font-size: 2rem;
   }
 
-  button:hover {
+  button {
     background-color: $blue;
     color: $light;
     border: none;
   }
 
+  button:hover {
+    background: transparent;
+    border: 2px dotted $blue;
+  }
+
   a:hover {
     cursor: pointer;
+    color: white;
   }
 
   .title {
@@ -36,16 +42,22 @@ $blue: #348AA7;
     background-color: $blue;
     height: 60px;
 
+    .nav-tags {
+      margin: auto;
+      width: 50%;
+      padding-right: 50%;
+    }
+
     a {
       color: $dark;
-      margin: auto;
       text-decoration: none;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      font-weight: 200;
       padding: 0 20px;
     }
     a:first-child {
       margin-left: 10%;
-      // border-right: 2px solid $dark;
+      border-right: 2px solid $dark;
     }
   }
 }

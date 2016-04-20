@@ -1,4 +1,4 @@
-<div class="container all-users">
+<div class="all-users">
 <div class="single-user" ng-repeat="user in users">
   <div class="row user-repeat">
     <h2>{{user.username}}</h2>
@@ -18,6 +18,7 @@
 <div ng-show="oneUser" class="chosenUser">
   <h1>{{oneUser.username}}</h1>
   <img ng-src="{{oneUser.avatar}}">
+  <div class="single-user-info">
   <p>{{oneUser.names.firstName}} is a <strong>{{ oneUser.gender | youAre }}</strong></p>
       <p>Who is interested in: </p>
       <ul>
@@ -25,7 +26,10 @@
           {{interest | interests}}
         </li>
       </ul>
+  <p>Birthday: {{ oneUser.dob | date:'MMMM d' }}</p>
   <p>Company: {{ oneUser.company.name }}</p>
+  <p>Accomplishments: {{ oneUser.company.catchPhrase }}</p>
+  </div>
 </div>
 <button ng-show="currentOffset" ng-click="paginate('backward')">Previous 10</button>
 <button ng-click="paginate('forward')">Next 10</button>

@@ -3,12 +3,16 @@
   min-height: 100vh; }
   .landing-page p {
     font-size: 2rem; }
-  .landing-page button:hover {
+  .landing-page button {
     background-color: #348AA7;
     color: #FBFBF2;
     border: none; }
+  .landing-page button:hover {
+    background: transparent;
+    border: 2px dotted #348AA7; }
   .landing-page a:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    color: white; }
   .landing-page .title {
     font-family: 'Syncopate', sans-serif;
     font-size: 10rem;
@@ -22,18 +26,24 @@
     margin-top: 30px;
     background-color: #348AA7;
     height: 60px; }
+    .landing-page .home-nav .nav-tags {
+      margin: auto;
+      width: 50%;
+      padding-right: 50%; }
     .landing-page .home-nav a {
       color: #595358;
-      margin: auto;
       text-decoration: none;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      font-weight: 200;
       padding: 0 20px; }
     .landing-page .home-nav a:first-child {
-      margin-left: 10%; }
+      margin-left: 10%;
+      border-right: 2px solid #595358; }
 
 .all-users {
   height: 80vh;
-  overflow: scroll; }
+  overflow: scroll;
+  margin-left: 20px; }
   .all-users img {
     float: left;
     margin-left: 10px; }
@@ -52,8 +62,12 @@
   width: 40%;
   position: fixed;
   margin-top: 30px;
-  right: 0;
-  top: 0; }
+  right: 20px;
+  top: 0;
+  height: 50vh;
+  overflow: scroll; }
+  .chosenUser p {
+    margin: 0; }
 
 html {
   position: relative;

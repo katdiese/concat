@@ -3,6 +3,7 @@ $light-grey: #bdbdbd;
 .all-users {
   height: 80vh;
   overflow: scroll;
+  margin-left: 20px;
 
   img {
     float: left;
@@ -27,6 +28,12 @@ $light-grey: #bdbdbd;
   width: 40%;
   position: fixed;
   margin-top: 30px;
-  right: 0;
+  right: 20px;
   top: 0;
+  height: 50vh;
+  overflow: scroll;
+
+  p {
+    margin: 0;
+  }
 }
