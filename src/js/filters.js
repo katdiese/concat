@@ -4,9 +4,10 @@
 
   angular
     .module('concatApp')
-    .filter('lookingFor', lookingFor);
+    .filter('interests', interests)
+    .filter('youAre', youAre);
 
-  function lookingFor() {
+  function interests() {
     return function(input) {
       if(input === 0) {
         return 'A Mentor';
@@ -16,6 +17,16 @@
         return 'General Dev Chats';
       } else if(input === 3) {
         return 'Collaboration';
+      }
+    }
+  }
+
+  function youAre() {
+    return function(input) {
+      if(input === 0 || input === 1) {
+        return "Mentor";
+      } else if(input === 2 || input === 3) {
+        return "Grasshopper";
       }
     }
   }
