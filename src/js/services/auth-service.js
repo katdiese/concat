@@ -28,7 +28,7 @@
           return $http.post(dataApi + '/auth/register', user, config);
         },
         setUserInfo: function(userData) {
-          console.log('userData: ', userData);
+          // console.log('userData: ', userData);
           $window.localStorage.setItem('user', JSON.stringify(userData.data.data.user.email));
           $window.localStorage.setItem('token', JSON.stringify(userData.data.data.token));
         },
@@ -37,8 +37,12 @@
           $window.localStorage.setItem('token', JSON.stringify(userData.data.data.token));
         },
         getUserInfo: function(userData) {
-          console.log(userData);
-          return $window.localStorage.getItem('user');
+          console.log('USER DATA::', userData);
+          // return $window.localStorage.getItem(userData);
+          return {
+            id: userData.data.data.user._id,
+            slug: userData.data.data.user.slug
+          }
         },
       };
     }
