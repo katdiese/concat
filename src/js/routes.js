@@ -17,6 +17,9 @@
       restricted: false,
       preventLoggedIn: true
     })
+    .when('/users/:id', {
+      template: '<main-nav></main-nav><single-user></single-user><footer></footer>'
+    })
     .when('/users', {
       template: '<main-nav></main-nav><all-users></all-users><footer-content></footer-content>',
       restricted: true,
@@ -28,7 +31,7 @@
       resolve: {
         test: function(authService, $rootScope, $location) {
           authService.logout();
-          $rootScope.currentUser = authService.getUserInfo();
+          // $rootScope.currentUser = authService.getUserInfo();
           $location.path('/');
         }
       }
