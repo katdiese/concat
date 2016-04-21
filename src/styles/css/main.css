@@ -1,6 +1,6 @@
 .landing-page {
   background-image: url("../../images/asanoha-400px.png");
-  min-height: 100vh; }
+  min-height: 200vh; }
   .landing-page p {
     font-size: 2rem; }
   .landing-page button {
@@ -11,8 +11,7 @@
     background: transparent;
     border: 2px dotted #348AA7; }
   .landing-page a:hover {
-    cursor: pointer;
-    color: white; }
+    cursor: pointer; }
   .landing-page .title {
     font-family: 'Syncopate', sans-serif;
     font-size: 10rem;
