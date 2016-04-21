@@ -17,6 +17,9 @@
       restricted: false,
       preventLoggedIn: true
     })
+    .when('/users/:slug', {
+      template: '<main-nav></main-nav><single-profile></single-profile><footer></footer>'
+    })
     .when('/users', {
       template: '<main-nav></main-nav><all-users></all-users><footer-content></footer-content>',
       restricted: true,
@@ -28,7 +31,7 @@
       resolve: {
         test: function(authService, $rootScope, $location) {
           authService.logout();
-          $rootScope.currentUser = authService.getUserInfo();
+          // $rootScope.currentUser = authService.getUserInfo();
           $location.path('/');
         }
       }
@@ -39,8 +42,6 @@
 
   function routeChange($rootScope, $location, $window, authService) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
-      //if route is restricted and no token is present
-      console.log(next.preventLoggedIn);
       if(next.restricted && !window.localStorage.getItem('token')) {
         $location.path('/');
       }

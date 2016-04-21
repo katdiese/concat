@@ -16,14 +16,12 @@
             $scope.getUsers = function(limit, offset) {
               userService.getAll(limit, offset)
               .then(function(users) {
-                console.log(users);
                 $scope.users = users.data.data;
               })
             }
             $scope.getOneUser = function(id) {
               userService.getOne(id)
               .then(function(user) {
-                console.log(user);
                 $scope.oneUser = user.data.data;
               })
             }
