@@ -30,6 +30,15 @@
           .catch(function(err) {
             return err;
           });
+        },
+        updateOne: function(id, updates) {
+          return $http.put(dataApi + '/members/' + id, updates)
+          .then(function(res) {
+            return res;
+          })
+          .catch(function(err) {
+            return err;
+          })
         }
       }
     }
