@@ -45,7 +45,8 @@
   margin-left: 20px; }
   .all-users img {
     float: left;
-    margin-left: 10px; }
+    margin-left: 10px;
+    width: 35%; }
   .all-users h2 {
     margin-left: 10px; }
   .all-users .single-user-info {
