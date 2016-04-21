@@ -36,7 +36,7 @@
             .then(function(user) {
               authService.setUserInfo(user);
               $location.path('/users');
-              $rootScope.currentUser = JSON.parse(authService.getUserInfo());
+              $rootScope.currentUser = authService.getUserInfo(user);
             })
             .catch(function(err) {
               console.log(err);
@@ -47,7 +47,7 @@
               .then(function(user) {
                 authService.setRegisterUserInfo(user);
                 $location.path('/users');
-                $rootScope.currentUser = JSON.parse(authService.getUserInfo());
+                $rootScope.currentUser = authService.getUserInfo(user);
               })
               .catch(function(err) {
                 console.log(err);
