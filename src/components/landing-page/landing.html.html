@@ -20,11 +20,11 @@
     <form class="register-form" ng-submit="register()" ng-show="!showLogin">
       <p>New around here? Welcome! Register and lets get started.</p>
       <label for="email">Email:</label>
-      <input required ng-model="user.email" id="email" type="email">
+      <input class="u-full-width" required ng-model="user.email" id="email" type="email">
       <label for="username">UserName:</label>
-      <input required type="text" ng-model="user.username">
+      <input class="u-full-width" required type="text" ng-model="user.username">
       <label for="firstName">First Name:</label>
-      <input required type="text" ng-model="user.names.firstName">
+      <input class="u-full-width" required type="text" ng-model="user.names.firstName">
       <label for="dob">Date of Birth: (must be at least 18 to sign up)</label>
       <select required id="month" ng-model="month" size="1">
         <option value="01">January</option>
@@ -164,13 +164,13 @@
         <option value="1920">1920</option>
       </select>
       <label for="lat">Your latitude:</label>
-      <input required type="number" ng-model="user.address.geo.lat">
+      <input class="u-full-width" required type="number" ng-model="user.address.geo.lat">
       <label for="lon">Your Longitude:</label>
-      <input required type="number" ng-model="user.address.geo.lng">
+      <input class="u-full-width" required type="number" ng-model="user.address.geo.lng">
       <label for="slug">Slug</label>
-      <input required type="text" ng-model="user.slug" value="{{user.name.firstName}}-{{user.username}}">
+      <input class="u-full-width" required type="text" ng-model="user.slug" value="{{user.name.firstName}}-{{user.username}}">
       <label for="password">Password</label>
-      <input class="u-full-width" id="password" type="password" ng-model="user.password">
+      <input class="u-full-width" class="u-full-width" id="password" type="password" ng-model="user.password">
       <button class="u-full-width loginButton" type="submit">register</button>
       <p>Already Registered? <a ng-click="toggleForm()">Login here.</a></p>
     </form>
