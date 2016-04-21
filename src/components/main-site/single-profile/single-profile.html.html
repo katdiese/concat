@@ -1,1 +1,79 @@
-<img ng-src='{{oneUser.avatar}}'>
+<div class="user-profile">
+  <div class="six columns">
+    <form ng-submit="updateUser(oneUser)">
+
+      <label for="firstName">First name:</label>
+      <input class="u-full-width" type="text" ng-model="oneUser.names.firstName">
+
+
+      <label for="lastName">Last Name:</label>
+      <input class="u-full-width" type="text" id="lastName" ng-model="oneUser.names.lastName">
+
+
+      <label for="avatar">Avatar:</label>
+      <input class="u-full-width" type="url" id="avatar" ng-model="oneUser.avatar">
+
+
+      <label for="email">Email:</label>
+      <input class="u-full-width" type="email" id="email" ng-model="oneUser.email">
+
+
+      <label for="streetAdd">Address Line 1:</label>
+      <input class="u-full-width" type="text" id="streetAdd" ng-model="oneUser.address.street">
+
+
+      <label for="suite">Address Line 2:</label>
+      <input class="u-full-width" type="text" id="suite" ng-model="oneUser.address.suite">
+
+
+      <label for="city">City:</label>
+      <input class="u-full-width" type="text" id="city" ng-model="oneUser.address.city">
+
+
+      <label for="zipcode">Zipcode:</label>
+      <input class="u-full-width" type="number" id="zipcode" ng-model="oneUser.address.zipcode">
+
+
+      <label for"lat">Latitude</label>
+      <input class="u-full-width" type="number" id="lat" ng-model="oneUser.address.geo.lat">
+
+
+      <label for="lng">Longitude</label>
+      <input class="u-full-width" type="number" id="lng" ng-model="oneUser.address.geo.lng">
+
+
+      <label for="website">Website</label>
+      <input class="u-full-width" type="number" id="website" ng-model="oneUser.website">
+
+
+      <label for="companyName">Company</label>
+      <input class="u-full-width" type="text" id="companyName" ng-model="oneUser.company.name">
+
+
+      <label for="accomplishments">Work accomplishments</label>
+      <input class="u-full-width" type="text" id="accomplishments" ng-model="oneUser.company.catchPhrase">
+
+
+      <label for="gender">What level of experience are you</label>
+      <select class="u-full-width" ng-model="oneUser.gender">
+        <option value="0">Mentor</option>
+        <option value="3">Grasshopper</option>
+      </select>
+
+      <label>What kind of connections are you looking for?</label>
+      <input type="radio" ng-model="check1" value="0"> A mentor<br>
+      <input type="radio" ng-model="check2" value="1"> Someone to Mentor<br>
+      <input type="radio" ng-model="check3" value="2"> General Dev Chats<br>
+      <input type="radio" ng-model="check4" value="3"> Collaboration<br>
+      <button type="submit">Update User</button>
+
+    </form>
+
+  </div>
+  <div class="six columns">
+    <img ng-src='{{oneUser.avatar}}'>
+    <h2>{{oneUser.names.firstName}}</h2>
+    <p>{{oneUser.company.name}}</p>
+    <p>{{oneUser.company.catchPhrase}}</p>
+  </div>
+</div>

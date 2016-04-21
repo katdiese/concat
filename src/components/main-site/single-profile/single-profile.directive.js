@@ -18,6 +18,12 @@
                 $scope.oneUser = user.data.data;
               })
             }
+            $scope.updateUser = function(data) {
+              userService.updateOne($rootScope.currentUser.id, data)
+              .then(function(user) {
+                console.log(user);
+              })
+            }
             $scope.getOneUser($rootScope.currentUser.id);
           }
       }
