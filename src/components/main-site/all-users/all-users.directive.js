@@ -29,20 +29,25 @@
                 $scope.users = users.data.data;
               })
             }
-            $scope.getUsers();
             $scope.popularFilter = function() {
               $scope.users = $scope.allUsers.filter(function(el) {
                 return el._matches.length > 8
               })
             }
-            $scope.nearbyFilter
+            $scope.nearbyFilter = function() {
+              $scope.users = $scope.allUsers.filter(function(el) {
+                return 123 - el.address.geo.lat < 10 && 123 - el.address.geo.lng < 10;
+              })
+            }
             $scope.matchesFilter = function() {
               $scope.users = $scope.allUsers.filter(function(el) {
-              return el._matches.filter(function(arr) {
-                return arr === '5719234249f05f11000fdb6f';
-              }).length > 0;
-            })
+                console.log(el);
+                return el._matches.filter(function(arrEl) {
+                  return arrEl === '5719234249f05f11000fdb6f';
+                }).length > 0;
+              })
             }
+            $scope.getUsers();
           }
       }
     }
