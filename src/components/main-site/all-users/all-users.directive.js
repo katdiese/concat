@@ -11,7 +11,7 @@
         restrict: 'E',
         templateUrl: 'components/main-site/all-users/all-users.html.html',
         controller:
-          function($scope, userService) {
+          function($rootScope, $scope, userService) {
             $scope.currentDisplay = 10;
             $scope.oneUser = "something";
             $scope.displayMore = function() {
@@ -22,6 +22,12 @@
               userService.getOne(id)
               .then(function(user) {
                 $scope.oneUser = user.data.data;
+              })
+            }
+            $scope.addMatch = function(matchId) {
+              userService.addMatch($rootScope.currentUser.id, matchId)
+              .then(function(match) {
+                console.log('This was matched');
               })
             }
             $scope.getUsers = function() {
@@ -45,7 +51,7 @@
             $scope.matchesFilter = function() {
               $scope.users = $scope.allUsers.filter(function(el) {
                 return el._matches.filter(function(arrEl) {
-                  return arrEl === '5719234249f05f11000fdb6f';
+                  return arrEl === $rootScope.currentUser.id;
                 }).length > 0;
               })
             }
