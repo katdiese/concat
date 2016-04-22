@@ -28,17 +28,11 @@
 
             $scope.$watchGroup(['check0', 'check1', 'check2', 'check3'],
             function (vals) {
-              // vals.forEach(function(el) {
-              //   if(el !== "") {interestedArr.push(el);}
-              //   console.log(interestedArr);
-              // })
               $scope.interestStrings = vals;
-              // console.log($scope.oneUser.interestedIn);
             });
 
 
             $scope.updateUser = function(data) {
-              // console.log('old:::', data.interestedIn);
               $scope.interestStrings.forEach(function(el) {
                 if(el !== "") {
                   $scope.interestedArr.push(parseInt(el));
@@ -46,9 +40,7 @@
               })
               data.interestedIn = $scope.interestedArr;
               console.log('new:::', data.interestedIn);
-              // $scope.oneUser.interestedIn = $scope.newInterests;
               console.log(data);
-              // userService.updateOne($rootScope.currentUser.id, data)
               userService.updateOne($rootScope.currentUser.id, data)
               .then(function(user) {
                 console.log(user);
