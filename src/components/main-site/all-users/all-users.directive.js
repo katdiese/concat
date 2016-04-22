@@ -13,10 +13,12 @@
         controller:
           function($scope, userService) {
             $scope.currentDisplay = 10;
+            $scope.oneUser = "something";
             $scope.displayMore = function() {
               $scope.currentDisplay += 10;
             }
             $scope.getOneUser = function(id) {
+              $scope.oneUser = "";
               userService.getOne(id)
               .then(function(user) {
                 $scope.oneUser = user.data.data;

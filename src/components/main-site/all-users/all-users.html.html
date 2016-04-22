@@ -22,7 +22,9 @@
     </div>
 </div>
 </div>
-<div ng-show="oneUser" class="chosenUser">
+<div class="chosenUser">
+<img ng-show="!oneUser" class="loading" ng-src="/images/loading-cat.gif">
+<div ng-show="oneUser.avatar">
   <h1>{{oneUser.username}}</h1>
   <img ng-src="{{oneUser.avatar}}">
   <div class="single-user-info">
@@ -37,6 +39,7 @@
   <p>Company: {{ oneUser.company.name }}</p>
   <p>Accomplishments: {{ oneUser.company.catchPhrase }}</p>
   </div>
+</div>
 </div>
 <button ng-show="users" ng-click="displayMore()">Next 10 Results</button>
 </div class="container">
