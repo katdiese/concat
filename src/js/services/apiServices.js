@@ -11,10 +11,8 @@
     function userService($http) {
       var dataApi = 'https://galvanize-student-apis.herokuapp.com/gdating';
       return {
-        getAll: function(limit, offset) {
-          return $http.get(dataApi + '/members?limit=' + limit + '&offset=' + offset, {
-
-          })
+        getAll: function() {
+          return $http.get(dataApi + '/members', {})
           .then(function(res) {
             return res;
           })

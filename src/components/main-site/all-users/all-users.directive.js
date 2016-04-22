@@ -12,12 +12,9 @@
         templateUrl: 'components/main-site/all-users/all-users.html.html',
         controller:
           function($scope, userService) {
-            $scope.currentOffset = 0;
-            $scope.getUsers = function(limit, offset) {
-              userService.getAll(limit, offset)
-              .then(function(users) {
-                $scope.users = users.data.data;
-              })
+            $scope.currentDisplay = 10;
+            $scope.displayMore = function() {
+              $scope.currentDisplay += 10;
             }
             $scope.getOneUser = function(id) {
               userService.getOne(id)
@@ -25,16 +22,31 @@
                 $scope.oneUser = user.data.data;
               })
             }
-            $scope.paginate = function(direction) {
-              if(direction === 'forward') {
-                $scope.currentOffset += 11;
-              } else if (direction === 'backward') {
-                $scope.currentOffset -= 11;
-              }
-                $scope.getUsers(10,$scope.currentOffset);
-              }
-            $scope.getUsers(10,$scope.currentOffset);
-
+            $scope.getUsers = function() {
+              userService.getAll()
+              .then(function(users) {
+                $scope.allUsers = users.data.data;
+                $scope.users = users.data.data;
+              })
+            }
+            $scope.popularFilter = function() {
+              $scope.users = $scope.allUsers.filter(function(el) {
+                return el._matches.length > 8
+              })
+            }
+            $scope.nearbyFilter = function() {
+              $scope.users = $scope.allUsers.filter(function(el) {
+                return 123 - el.address.geo.lat < 10 && 123 - el.address.geo.lng < 10;
+              })
+            }
+            $scope.matchesFilter = function() {
+              $scope.users = $scope.allUsers.filter(function(el) {
+                return el._matches.filter(function(arrEl) {
+                  return arrEl === '5719234249f05f11000fdb6f';
+                }).length > 0;
+              })
+            }
+            $scope.getUsers();
           }
       }
     }

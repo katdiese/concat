@@ -1,5 +1,11 @@
 <div class="all-users">
-<div class="single-user" ng-repeat="user in users">
+<nav>
+  <a ng-click="getUsers()" href="">Show All</a>
+  <a ng-click="popularFilter()" href="">Popular</a>
+  <a ng-click="matchesFilter()" href="" >Matches</a>
+  <a ng-click="nearbyFilter()" href="">Nearby</a>
+</nav>
+<div class="single-user" ng-repeat="user in users | limitTo: currentDisplay">
   <div class="row user-repeat">
     <h2>{{user.username}}</h2>
     <img ng-src="{{user.avatar}}">
@@ -31,6 +37,5 @@
   <p>Accomplishments: {{ oneUser.company.catchPhrase }}</p>
   </div>
 </div>
-<button ng-show="currentOffset" ng-click="paginate('backward')">Previous 10</button>
-<button ng-click="paginate('forward')">Next 10</button>
+<button ng-click="displayMore()">Next 10 Results</button>
 </div class="container">
