@@ -41,7 +41,6 @@
             }
             $scope.matchesFilter = function() {
               $scope.users = $scope.allUsers.filter(function(el) {
-                console.log(el);
                 return el._matches.filter(function(arrEl) {
                   return arrEl === '5719234249f05f11000fdb6f';
                 }).length > 0;
