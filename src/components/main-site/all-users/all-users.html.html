@@ -1,4 +1,9 @@
 <div class="all-users">
+<nav>
+  <a ng-click="getUsers()" href="">Show All</a>
+  <a ng-click="popularFilter()" href="">Popular</a>
+  <a ng-click="matchesFilter()" href="" >Matches</a>
+</nav>
 <div class="single-user" ng-repeat="user in users | limitTo: currentDisplay">
   <div class="row user-repeat">
     <h2>{{user.username}}</h2>
