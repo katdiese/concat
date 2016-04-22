@@ -23,6 +23,10 @@ $light-grey: #bdbdbd;
     border-radius: 5px;
     border: 2px solid $light-grey;
   }
+  .loading {
+    padding: 10rem 20rem;
+    width: 10rem;
+  }
 }
 
 .chosenUser {

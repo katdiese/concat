@@ -57,6 +57,9 @@
     margin: 20px 0;
     border-radius: 5px;
     border: 2px solid #bdbdbd; }
+  .all-users .loading {
+    padding: 10rem 20rem;
+    width: 10rem; }
 
 .chosenUser {
   width: 40%;

@@ -5,6 +5,7 @@
   <a ng-click="matchesFilter()" href="" >Matches</a>
   <a ng-click="nearbyFilter()" href="">Nearby</a>
 </nav>
+<img ng-hide="users" class="loading" ng-src="/images/loading-cat.gif">
 <div class="single-user" ng-repeat="user in users | limitTo: currentDisplay">
   <div class="row user-repeat">
     <h2>{{user.username}}</h2>
@@ -37,5 +38,5 @@
   <p>Accomplishments: {{ oneUser.company.catchPhrase }}</p>
   </div>
 </div>
-<button ng-click="displayMore()">Next 10 Results</button>
+<button ng-show="users" ng-click="displayMore()">Next 10 Results</button>
 </div class="container">

@@ -23,6 +23,7 @@
               })
             }
             $scope.getUsers = function() {
+              $scope.users = "";
               userService.getAll()
               .then(function(users) {
                 $scope.allUsers = users.data.data;
