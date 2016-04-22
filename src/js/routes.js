@@ -29,7 +29,7 @@
       restricted: false,
       preventLoggedIn: false,
       resolve: {
-        test: function(authService, $rootScope, $location) {
+        logout: function(authService, $rootScope, $location) {
           authService.logout();
           // $rootScope.currentUser = authService.getUserInfo();
           $location.path('/');

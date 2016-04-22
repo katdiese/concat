@@ -13,9 +13,10 @@
         controller:
           function($rootScope, $scope, userService) {
             $scope.getOneUser = function(id) {
-              userService.getOne(id)
+              userService.getOne('5719260549f05f1100105ded')
               .then(function(user) {
                 $scope.oneUser = user.data.data;
+                $scope.oneUser.interestedIn = [];
               })
             }
             $scope.check0 = "";
@@ -23,37 +24,38 @@
             $scope.check2 = "";
             $scope.check3 = "";
 
-            $scope.newInterests = [];
+            $scope.interestedArr = [];
 
             $scope.$watchGroup(['check0', 'check1', 'check2', 'check3'],
             function (vals) {
               // vals.forEach(function(el) {
-              //   if(el !== "") {arr.push(el);}
-              //   console.log(arr);
+              //   if(el !== "") {interestedArr.push(el);}
+              //   console.log(interestedArr);
               // })
-              $scope.interestArr = vals;
+              $scope.interestStrings = vals;
               // console.log($scope.oneUser.interestedIn);
             });
 
-            $scope.oneUser.interestedIn = [1,2];
 
             $scope.updateUser = function(data) {
-              // data.interestedIn = [];
               // console.log('old:::', data.interestedIn);
-              // $scope.interestArr.forEach(function(el) {
-              //   if(el !== "") {
-              //     data.interestedIn.push(parseInt(el));
-              //   }
-              // })
-              // data.interestedIn = $scope.newInterest;
-              // console.log('new:::', data.interestedIn);
+              $scope.interestStrings.forEach(function(el) {
+                if(el !== "") {
+                  $scope.interestedArr.push(parseInt(el));
+                }
+              })
+              data.interestedIn = $scope.interestedArr;
+              console.log('new:::', data.interestedIn);
               // $scope.oneUser.interestedIn = $scope.newInterests;
+              console.log(data);
+              // userService.updateOne($rootScope.currentUser.id, data)
               userService.updateOne($rootScope.currentUser.id, data)
               .then(function(user) {
                 console.log(user);
               })
             }
-            $scope.getOneUser($rootScope.currentUser.id);
+            // $scope.getOneUser('$rootScope.currentUser.id');
+            $scope.getOneUser('5719260549f05f1100105ded');
           }
       }
     }
